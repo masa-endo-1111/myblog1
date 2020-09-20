@@ -58,3 +58,6 @@ gem 'devise'
 gem 'activeadmin'
 
 gem 'activeadmin_froala_editor'
+
+gem 'rails-i18n'
+gem 'devise-i18n'
