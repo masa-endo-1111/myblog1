@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
+  resources :users, only: :show
   resources :posts, :only => [:index, :show] do
     resources :comments, :only => [:create, :destroy]
+    resources :bookmarks, only: [:create, :destroy]
   end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
