@@ -101,6 +101,8 @@ GEM
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
     erubi (1.9.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -280,6 +282,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   devise-i18n
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (>= 0.5.3)
