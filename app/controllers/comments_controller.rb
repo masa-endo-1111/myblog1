@@ -1,13 +1,16 @@
 class CommentsController < ApplicationController
   before_action :set_post
+  before_action :authenticate_user!  
 
   def create
-      @post.comments.create! comments_params
-      redirect_to @post
+    @comment = @post.comments.create(comments_params)
+    @comment.save
+    redirect_to @post
   end
 
   def destroy
-      @post.comments.destroy params[:id]
+      @comment = Comment.find(params[:id])
+      @comment.destroy
       redirect_to @post
   end
 
@@ -17,6 +20,6 @@ class CommentsController < ApplicationController
       end
 
        def comments_params
-          params.required(:comment).permit(:content)
+          params.required(:comment).permit(:content).merge(user_id: current_user.id, post_id: params[:post_id])
       end
 end
