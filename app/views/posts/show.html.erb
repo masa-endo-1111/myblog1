@@ -19,9 +19,9 @@
 <tbody>
   <tr>
     <% if @post.bookmarked_by?(current_user) %>
-      <td><%= button_to "ブックマークを外す", post_bookmark_path(@post), method: :delete %></td>
+      <td><%= link_to "ブックマークを外す", post_bookmark_path(@post), method: :delete %></td>
     <% else %>
-      <td><%= button_to "ブックマーク", post_bookmarks_path(@post), method: :post %></td>
+      <td><%= link_to "ブックマーク", post_bookmarks_path(@post), method: :post %></td>
     <% end %>
   </tr>
 </tbody>
