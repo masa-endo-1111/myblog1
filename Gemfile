@@ -64,3 +64,5 @@ gem 'devise-i18n'
 
 gem 'faker'
 gem 'kaminari'
+
+gem 'ancestry'
