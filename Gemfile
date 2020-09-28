@@ -67,3 +67,5 @@ gem 'kaminari'
 
 gem 'ancestry'
 gem 'haml-rails'
+
+gem 'devise-bootstrap-views'
