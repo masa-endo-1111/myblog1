@@ -3,4 +3,12 @@
 
 body {
   padding-top: 60px;
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
+footer {
+  bottom: 0;
+  position: absolute;
 }
