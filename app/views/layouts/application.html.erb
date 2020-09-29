@@ -10,24 +10,15 @@
   </head>
 
   <body>
+   <header>
     <%= render 'layouts/header'%>
+   </header>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
     <%= yield %>
      </div>
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  ｜ログイン中 <strong><%= current_user.name %></strong>.｜
-  <%= link_to 'ユーザー情報詳細', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "マイページ", "/users/#{current_user.id}" %> |
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
-<% else %>
-  <%= link_to "ユーザー登録", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %> |
-<% end %>
-<%= link_to '管理画面', admin_admin_users_path, :class => 'navbar-link' %> |
-<%= link_to 'トップページ', root_path %> |
+    <%= render 'layouts/footer'%>
   </body>
 </html>
