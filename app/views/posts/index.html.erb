@@ -1,5 +1,6 @@
 <div class="row">
-<% @posts.each do |post| %>
+<% if @search_posts.any? %>
+<% @search_posts.each do |post| %>
     <div class="card col-lg-4" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"><%= post.title %></h5>
@@ -8,5 +9,9 @@
         </div>
     </div>
 <% end %>
-<%= paginate @posts %>
+<% else %>
+<h3><%= '検索結果がありません。' %></h3>
+<% end %>
 </div>
+
+<%= paginate @posts %>

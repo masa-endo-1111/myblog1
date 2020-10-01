@@ -1,23 +1,17 @@
-<table>
-  <caption>ブックマーク一覧</caption>
+  <h3>ブックマーク一覧</h3>
   <thead>
     <tr>
-      <th>投稿者名</th>
-      <th>タイトル</th>
-      <th>本文</th>
+      <th>タイトル:</th>
     </tr>
   </thead>
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.post.users.name %></td>
         <td>
           <%= link_to post_path(bookmark.post) do %>
-            <%= bookmark.post.title %>
+            <%= bookmark.post.title %>|
           <% end %>
         </td>
-        <td><%= bookmark.post.content %></td>
       </tr>
     <% end %>
   </tbody>
-</table>

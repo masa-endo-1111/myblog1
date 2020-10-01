@@ -1,9 +1,9 @@
 <% if current_user %>
 <%= form_with(model: [ @post, @comment ], remote: true) do |form| %>
     Your Comment:<br>
-    <%= form.text_area :content, size: '50x20' %><br>
-    <%= form.submit %>
+    <%= form.text_area :content, size: '70x10' %><br>
+    <%= form.submit "コメントする" %>
 <% end %> 
     <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <strong><p>※※※ コメント、いいね、ブックマークは新規登録/ログインが必要です ※※※</p></strong>
     <% end %>

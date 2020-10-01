@@ -2,7 +2,7 @@
 
 <p><%= sanitize @post.content %><p>
 
-<h4>上（タイトル、本文）下（参考書籍）</h4>
+<h4>参考url</h4>
 
 <%= @post.auther %>
 
@@ -10,7 +10,7 @@
    <%= render 'likes/like', post: @post %>
 </div>
 
-<h2>コメント</h2>
+<h5>コメント</h5>
 
  <%= render 'comments/comment', post: @post %>
 
@@ -18,7 +18,7 @@
 <%= render 'comments/new', post: @post %> 
 
 
-<%= link_to 'Back', posts_path %>
+<%= link_to '戻る |', posts_path %>
 
 <tbody>
   <tr>
