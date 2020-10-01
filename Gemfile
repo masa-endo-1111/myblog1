@@ -70,3 +70,4 @@ gem 'haml-rails'
 
 gem 'devise-bootstrap-views'
 gem 'active_admin_theme'
+gem 'ransack'

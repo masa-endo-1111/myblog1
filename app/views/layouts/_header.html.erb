@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ホーム </font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（電流）</font></font></span></a>
+          <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">記事別 </font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（電流）</font></font></span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/admin/admin_users"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">管理画面</font></font></a>
@@ -21,9 +21,9 @@
   <%= link_to "ユーザー登録", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %> |
 <% end %>
-      <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="探す" aria-label="探す">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">探す</font></font></button>
-      </form>
+    <%= search_form_for @search, url: posts_path do |f| %>
+  <%= f.text_field :title_or_content_cont, placeholder: '探す' %>
+  <%= f.submit ("検索") , class: 'btn btn-outline-success my-2 my-sm-0'%>
+  <% end %>
     </div>
   </nav>
